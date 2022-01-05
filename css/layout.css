@@ -1,0 +1,456 @@
+@import 'reset.css';
+@import 'common.css';
+
+/*=========================== 공통 ==================================*/
+/* header */
+header{
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 2;
+}
+header .header_top{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .header_top h1{
+    max-width: 120px;
+    height: 20px;
+    margin-left: 15px;
+}
+header .header_top h1 a{
+    display: block;
+    background-image: url(../img/logo.png);
+    width: 120px; height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+header .menu_area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 120px 0 150px;
+    transition: .3s ease-out;
+    font-size: 18px;
+    font-weight: 500;
+}
+header .header_top .menu_area > ul{
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+}
+header .header_top .menu_area > ul > li{
+    padding: 0 30px;
+}
+
+
+header .header_left .menu{
+    width: 32px;
+    height: 32px;
+    display: block;
+    display : inline-block;
+    transition : all .4s;
+    position: relative;
+}
+header .header_left .menu span{
+    transition : 0.4s;
+    margin-bottom: 7px;
+    display: block;
+    position : absolute;
+    left : 0;
+    width : 100%;
+    height : 2px;
+    border-radius : 4px;
+    background-color: #000;
+}
+header .header_left .line01{
+    top : 0;
+}
+header .header_left .line02{
+    top : 12px;
+}
+header .header_left .line03{
+    bottom : 0;
+}
+
+
+/* footer */
+footer{
+    padding: 70px 180px;
+    background: #222;
+}
+footer address{
+    color: #f3f3f3;
+    font-size: 14px;
+    line-height: 30px;
+}
+footer .copy{
+    color: #F3F3F3;
+    font-size: 14px;
+    line-height: 30px;
+    opacity: .5
+}
+
+
+/*=========================== desktop ==================================*/
+@media screen and (min-width: 1283px){
+    header .menu_area{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 120px 0 150px;
+        transition: .3s ease-out;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    header .header_top .menu_area > ul{
+        display: flex;
+        justify-content: flex-end;
+        text-align: center;
+    }
+    header .header_top .menu_area > ul > li{
+        position: relative;
+    }
+    header .header_top .menu_area ul > li > a{
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        font-size: 14px;
+        position: relative;
+        font-weight: 700;
+    }
+    header .header_top .menu_area li:hover .mainnav{
+        color: #006bea;
+    }
+    header .header_top .menu_area li:hover .mainnav::after{
+        content: '';
+        position: absolute;
+        left: 45%;
+        top: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 8px;
+        background: #006bea;
+        transition: 0.4s;
+    }
+    header .header_top .subnav{
+        display: none;
+        position: absolute;
+        width: 180%;
+        padding: 15px;
+        line-height: 50px;
+        top: 50px; left: -50px;
+        background: rgba(255,255,255,.7);
+        border-radius: 18px;
+        backdrop-filter: blur(12px);
+        box-shadow: -1px 4px 11px rgba(0 0 0 /.15);
+    }
+    header .header_top .subnav li a:hover{
+        color: #006bea;
+    }
+    header .header_top .lang{
+        width: 25px;
+        margin-left: 70px;
+        z-index: 10;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    header .header_left{
+        width: 150px;
+        height: 80vh;
+        padding: 40px 0;
+        background: #FFF;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    header .header_left .find{
+        width: 100px;
+        height: 22px;
+        font-size: 16px;
+        font-weight: 700;
+        transform: rotate(-90deg);
+        z-index: 20;
+    }
+    header .header_left .find a{
+        color: #000;
+    }
+
+    header .header_top.on{
+        background-color: #fff;
+        border-bottom: 1px solid #eee;
+        box-shadow: 0 0 5px #eee;
+    }
+
+    /* menu_open */
+    header .menu_open{
+        background-image: url(../img/menubg.jpg);
+        color: #fff;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 0; left: -100%;
+        transition: 0.3s;
+    }
+    header .menu_open > ul{
+        width: calc(100% - 150px);
+        height: 600px;
+        margin-left: 150px;
+        display: flex;
+        justify-content: center;
+    }
+    header .menu_open > ul > li{
+        width: 215px;
+        margin-left: 70px;
+    }
+    header .menu_open > ul > li > a{
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: 700;
+    }
+    header .menu_open .subnav{
+        margin-top: 40px;
+    }
+    header .menu_open .subnav li{
+        margin-top: 20px;
+    }
+    header .menu_open .subnav li a{
+        color: #FFF;
+        font-size: 18px;
+        line-height: 30px;
+        font-weight: 700;
+    }
+    header .menu_open .dept3 li a{
+        color: #aaa;
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 400;
+    }
+    header .menu_open .subnav a:hover{
+        color: #006bea;
+        transition: 0.2s;
+    }
+    /* menu_open.on */
+    .menu_open.on{
+        left: 0;
+    }
+    .header_left.on .find a{
+        color: #fff;
+        display: block;
+        height: 100%;
+    }
+    .header_left.on .menu span{
+        background-color: #fff;
+        z-index: 10;
+    }
+    .header_left.on .line01 {
+        transform : translateY(10px) rotate(-45deg);
+    }
+    .header_left.on .line02 {
+        opacity : 0;
+    }
+    .header_left.on .line03 {
+        transform : translateY(-13px) rotate(45deg);
+    }
+
+
+    /* footer */
+    footer .scroll_top{
+        position: fixed;
+        bottom: 50px;
+        right: 70px;
+        z-index: 20;
+        transition: 0.6s;
+        opacity: 0;
+        pointer-events: none;
+        cursor: pointer;
+    }
+    footer .scroll_top.on{
+        opacity: 1;
+        pointer-events: visible;
+    }
+}
+
+
+
+
+/*=========================== tablet ==================================*/
+@media screen and (max-width: 1282px){
+    /* header */
+    header .header_left h1,
+    header .header_left .find{
+        display: none;
+    }
+    header .header_left .menu{
+        position: absolute;
+        top: 17px; right: 10px;
+        width: 25px; height: 20px;
+        z-index: 10;
+    }
+    header .header_top{
+        width: 100%;
+        background-color: #fff;
+        height: 50px;
+    }
+    header .menu_area{
+        display: none;
+    }
+    
+    /* menu_open */
+    .menu_open{
+        position: absolute;
+        top: 0; right: -100%;
+        width: calc(100% - 25vw);
+        margin-left: 25px;
+        height: 100vh;
+        background-color: #fff;
+        transition: 0.5s;
+    }
+    .menu_open > ul{
+        margin-top: 50px;
+    }
+    .menu_open > ul > li > a{
+        padding: 0 25px;
+        position: relative;
+        display: block;
+        color: #000;
+        font-size: 16px;
+        line-height: 45px;
+        font-weight: 700;
+        position: relative;
+    }
+    .menu_open > ul > li > a::before{
+        content: '';
+        position: absolute;
+        top: 22px; right: 10px;
+        width: 10px;
+        height: 2px;
+        background-color: #333;
+    }
+    .menu_open > ul > li > a::after{
+        content: '';
+        position: absolute;
+        top: 18px; right:14px;
+        width: 2px;
+        height: 10px;
+        background-color: #333;
+    }
+    .menu_open .subnav{
+        padding: 20px;
+        background-color: #f9f9f9;
+    }
+    .menu_open .subnav > li{
+        padding: 0 25px;
+    }
+    .menu_open .subnav > li > a{
+        font-size: 13px;
+        line-height: 26px;
+        font-weight: 700;
+    }
+    .menu_open .dept3 li a{
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 400
+    }
+    header .header_left .line01{
+        top : 0;
+    }
+    header .header_left .line02{
+        top : 14px;
+    }
+    header .header_left .line03{
+        bottom : 4px;
+    }
+
+    /* menu_open.on */
+    .menu_open.on{
+        right: 0;
+    }
+    .header_left.on .line01 {
+        transform : translateY(6px) rotate(-45deg);
+    }
+    .header_left.on .line02 {
+        opacity : 0;
+    }
+    .header_left.on .line03 {
+        transform : translateY(-2px) rotate(45deg);
+    }
+
+    /* accodian */
+    .menu_open ul .wrap{
+        overflow: hidden;
+        height: 0;
+    }
+    .menu_open > ul > li > a.on::after{
+        display: none;
+    }
+    .menu_open.on .line01{
+        -webkit-transform : translateY(10px) rotate(-45deg);
+        transform : translateY(9px) rotate(-45deg);
+    }
+    .menu_open.on .line02{
+        opacity : 0;
+    }
+    .menu_open.on .line03{
+        -webkit-transform : translateY(-10px) rotate(45deg);
+        transform : translateY(-9px) rotate(45deg);
+    }
+
+    /* footer */
+    footer{
+        padding: 30px 20px;
+        background: #222;
+        word-break: keep-all;
+    }
+    footer address{
+        color: #f3f3f3;    
+        font-size: 12px;
+        line-height: 22px;
+    }
+    footer .copy{
+        color: #F3F3F3;
+        font-size: 12px;
+        line-height: 22px;
+        opacity: .5
+    }
+    footer .scroll_top{
+        display: none;
+    }
+}
+
+/*=========================== mobile ==================================*/
+@media screen and (max-width: 767px){
+    .header_top{
+        width: 100%; height: 100%;
+    }
+    header .header_top h1 a{
+        display: block;
+        background-image: url(../img/logo.png);
+        width: 90px; height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 18px;
+    }
+
+}
+
+/*=========================== iphone5 & se ===============================*/
+@media screen and (max-width: 320px){
+
+    header .header_top{
+        width: 100%;
+        background-color: #fff;
+        height: 50px;
+    }
+}

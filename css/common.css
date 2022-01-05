@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'NEXONLv2Gothic';
+    font-weight: 300;
+    src: url(NEXONLv2GothicLight.eot);
+    src: url(NEXONLv2GothicLight.woff) format('woff');
+    src: url("../fonts/NEXONLv2GothicLight.woff") format("woff");     
+}
+@font-face {
+    font-family: 'NEXONLv2Gothic';
+    font-weight: 400;
+    src: url(NEXONLv2Gothic.eot);
+    src: url(NEXONLv2Gothic.eot?#iefix) format('embedded-opentype'),
+         url(NEXONLv2Gothic.woff) format('woff'),
+         url(NEXONLv2Gothic.ttf) format('truetype');
+    src: url("../fonts/NEXONLv2Gothic.woff") format("woff");
+}
+@font-face {
+    font-family: 'NEXONLv2Gothic';
+    font-weight: 500;
+    src: url(NEXONLv2GothicMedium.eot);
+    src: url(NEXONLv2GothicMedium.eot?#iefix) format('embedded-opentype'),
+         url(NEXONLv2GothicMedium.woff) format('woff'),
+         url(NEXONLv2GothicMedium.ttf) format('truetype');
+    src: url("../fonts/NEXONLv2GothicMedium.woff") format("woff");
+}
+@font-face {
+    font-family: 'NEXONLv2Gothic';
+    font-weight: 700;
+    src: url(NEXONLv2GothicBold.eot);
+    src: url(NEXONLv2GothicBold.eot?#iefix) format('embedded-opentype'),
+         url(NEXONLv2GothicBold.woff) format('woff'),
+         url(NEXONLv2GothicBold.ttf) format('truetype');
+    src: url("../fonts/NEXONLv2GothicBold.woff") format("woff");
+}
+
+:root{
+    --blue:#006bea;
+}
+body{
+    font-family: 'NEXONLv2Gothic', sans-serif;
+    font-weight: 400;
+    color: #000;
+}
+
+.scroll_h{
+    overflow: hidden;
+}
+.blind{
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+h2.title{
+    margin-top: 65px;
+    color: #222;
+    font-size: 60px;
+    line-height: 67px;
+    font-weight: 700;
+}
+a.more{
+    color: #222;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 500;
+    position: relative;
+}
+
+a.more .next{
+    display: inline-block;
+    margin-top: 32px;
+}
+a.more .next::before{
+    content: '';
+    background-image: url(../img/more.png);
+    position: absolute;
+    z-index: 2;
+    left: 124%;
+    top: 50%;
+    width: 72px;
+    height: 14px;
+    margin-top: -7px;
+}
+a.more .next::after{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    right: -111px;
+    top: 50%;
+    width: 46px;
+    height: 46px;
+    margin-top: -23px;
+    border-radius: 100%;
+    background: #cd1521;
+    transition: .3s ease-out;
+}
